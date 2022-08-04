@@ -29,10 +29,9 @@ jobs:
       run: go build -v ./...
 
     - name: Run Gosec Security Scanner
-      run:
-        export PATH=$PATH:$(go env GOPATH)/bin
-        go install github.com/securego/gosec/v2/cmd/gosec@latest
-        gosec ./...
+      uses: securego/gosec@master
+      with:
+        args: ./...
 
     - name: Test
       run: go test -v ./...
