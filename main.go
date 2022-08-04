@@ -8,5 +8,6 @@ func main() {
 }
 
 func Cat() string {
+	//格式化输出
 	return fmt.Sprintf("%s~~~", "Miao")
 }
